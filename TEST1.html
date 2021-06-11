@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADD TWO NUMBERS</title>
+    <style>
+      html,
+      body {
+        text-align: center;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>ADD TWO NUMBERS</h2>
+    <button onclick="add()">PROMPT</button>
+  </body>
+  <script>
+    function add() {
+      const firstNumber = parseInt(window.prompt("Enter first number", "0"));
+      const secondNumber = parseInt(window.prompt("Enter second number", "0"));
+      const total = firstNumber + secondNumber;
+      const br = "</br>";
+      document.write("First Number  : " + firstNumber + br);
+      document.write("Second Number : " + secondNumber + br);
+      document.write("Total = " + total);
+    }
+  </script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WE LAB 10</title>
+    <style>
+      html {
+        width: 80vw;
+        margin: 20px auto;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        text-align: center;
+      }
+      #promptMsg {
+        color: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>
+      This page will show demo of Alert, Confirm and Prompt using javascript
+    </h3>
+    <h3 id="alert"></h3>
+    <button onclick="showAlert()">ALERT</button>
+    <h3 id="confirm"></h3>
+    <button onclick="showConfirm()">CONFIRM</button>
+    <h3 id="prompt"></h3>
+    <button onclick="showPrompt()">PROMPT</button>
+  </body>
+  <script>
+    const showAlert = () => {
+      alert("It is an Alert demo!!");
+      document.getElementById("alert").innerText = "You viewed an Alert.";
+    };
+    const showConfirm = () => {
+      const selection = confirm("Press a button!\nEither OK or Cancel");
+      document.getElementById("confirm").innerText = selection
+        ? "You pressed OK!"
+        : "You pressed Cancel!";
+    };
+    const showPrompt = () => {
+      const enteredValue = window.prompt("Type Something", "A message");
+      document.getElementById(
+        "prompt"
+      ).innerHTML = `You entered '<span id='promptMsg'>${enteredValue}</span>'`;
+    };
+  </script>
+</html>

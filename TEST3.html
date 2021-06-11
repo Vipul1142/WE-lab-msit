@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAX OF 3</title>
+    <style>
+      html,
+      body {
+        text-align: center;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>MAX?</h2>
+    <button onclick="max()">Find Max</button>
+  </body>
+  <script>
+    function max() {
+      const firstNumber = parseFloat(window.prompt("First number", "0"));
+      const secondNumber = parseFloat(window.prompt("Second number", "0"));
+      const thirdNumber = parseFloat(window.prompt("Third number", "0"));
+      const max = Math.max(Math.max(firstNumber, secondNumber), thirdNumber);
+      const br = "</br>";
+      document.write(
+        `First Number  : ${firstNumber + br}
+        Second Number : ${secondNumber + br}
+        Third Number  : ${thirdNumber + br}
+        Max = ${max}`
+      );
+    }
+  </script>
+</html>

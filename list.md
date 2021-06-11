@@ -1,0 +1,15 @@
+- [x] 1. Create a simple webpage describing your department in HTML.
+- [x] 2. Create a table to show your class time table in HTML.
+- [x] 3. Create a student registration form in HTML.
+- [x] 4. Create a webpage using frameset and frame tags in HTML.
+- [x] 5. Create internal CSS to change colors of certain text portion, bold, underline and italics certain words in your HTML web page. Also change background color of each paragraph using inline CSS.
+- [x] 6. Create External CSS to change colors of certain text portion, bold, underline and italics certain words in your HTML web page, change background color of each paragraph and link it your webpage.
+- [x] 7. Create a catalog using XML and display it using CSS and XSLT.
+- [x] 8. Develop and demonstrate a XHTML document corresponding to 1 and 2 experiments that illustrates the use of internal and external style sheets.
+- [x] 9. Create a web page to print date using JavaScript.
+- [x] 10. Create a web page to show use of alert, confirm, and prompt box.
+- [ ] 11. Create a web page to display a new image & text when mouse comes over the existing content in the page.
+- [ ] 12. Create a form similar to the third experiment. Put validation checks on values entered by the user using JavaScript.
+- [ ] 13. Create a simple JSP page to display "Hello Message".
+- [ ] 14. Create a form as JSP page. Embed JSP in HTML itself.
+- [ ] 15. Create a JSP page to give the demonstration of database acces.
