@@ -8,8 +8,8 @@
 - [x] 8. Develop and demonstrate a XHTML document corresponding to 1 and 2 experiments that illustrates the use of internal and external style sheets.
 - [x] 9. Create a web page to print date using JavaScript.
 - [x] 10. Create a web page to show use of alert, confirm, and prompt box.
-- [ ] 11. Create a web page to display a new image & text when mouse comes over the existing content in the page.
-- [ ] 12. Create a form similar to the third experiment. Put validation checks on values entered by the user using JavaScript.
-- [ ] 13. Create a simple JSP page to display "Hello Message".
-- [ ] 14. Create a form as JSP page. Embed JSP in HTML itself.
-- [ ] 15. Create a JSP page to give the demonstration of database acces.
+- [x] 11. Create a web page to display a new image & text when mouse comes over the existing content in the page.
+- [x] 12. Create a form similar to the third experiment. Put validation checks on values entered by the user using JavaScript.
+- [x] 13. Create a simple JSP page to display "Hello Message".
+- [x] 14. Create a form as JSP page. Embed JSP in HTML itself.
+- [x] 15. Create a JSP page to give the demonstration of database acces.
