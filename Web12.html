@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WE LAB 12</title>
+    <style>
+      html {
+        width: 80vw;
+        height: auto;
+        margin: 0 auto;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      div {
+        width: 45%;
+        margin: 10px;
+        display: inline-flex;
+        justify-content: left;
+        align-items: center;
+      }
+      label {
+        margin-right: 10px;
+      }
+      #submit {
+        position: absolute;
+        right: 45%;
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+        font-size: larger;
+      }
+      fieldset input {
+        border: 2px solid grey;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center">STUDENT INFO FORM</h2>
+    <form>
+      <fieldset>
+        <legend>PERSONALIA</legend>
+        <div>
+          <label for="fName">First name : </label>
+          <input type="text" id="fName" name="fName" />
+        </div>
+        <div>
+          <label for="lName">Last name : </label>
+          <input type="text" id="lName" name="lName" />
+        </div>
+        <div>
+          <span>Gender : </span>
+          <input type="radio" id="male" name="gender" value="male" checked />
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Female</label>
+          <input type="radio" id="other" name="gender" value="other" />
+          <label for="other">Other</label>
+        </div>
+        <div>
+          <label for="birthday">DOB : </label>
+          <input type="date" id="birthday" name="birthday" />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>PARENT</legend>
+        <div>
+          <label for="faName">Father name : </label>
+          <input type="text" id="faName" name="faName" />
+        </div>
+        <div>
+          <label for="moName">Mother name : </label>
+          <input type="text" id="moName" name="moName" />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>ADDRESS</legend>
+        <div>
+          <label for="hNumber">H.No : </label>
+          <input type="text" id="hNumber" name="hNumber" />
+        </div>
+        <div>
+          <label for="area">Area : </label>
+          <input type="text" id="area" name="area" />
+        </div>
+        <div>
+          <label for="city">City : </label>
+          <input type="text" id="city" name="city" />
+        </div>
+        <div>
+          <label for="state">State : </label>
+          <input type="text" id="state" name="state" />
+        </div>
+        <div>
+          <label for="pincode">Pincode : </label>
+          <input type="text" id="pincode" name="pincode" />
+        </div>
+        <div>
+          <label for="country">Country : </label>
+          <input type="text" id="country" name="country" value="India" />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>CONTACT</legend>
+        <div>
+          <label for="mob">Mobile number:</label>
+          <input type="tel" id="mob" name="mob" pattern="[0-9]{10}" />
+        </div>
+        <div>
+          <label for="email">E-Mail Id : </label>
+          <input type="email" id="email" name="email" />
+        </div>
+      </fieldset>
+      <input type="button" value="Submit" id="submit" onclick="validate()" />
+    </form>
+    <p id="messageBox"></p>
+  </body>
+  <script>
+    const rightColor = "springgreen";
+    const wrongColor = "tomato";
+    const getElement = (id) => document.getElementById(id);
+    const rightBorderColor = (id) => {
+      getElement(id).style.borderColor = rightColor;
+    };
+    const wrongBorderColor = (id) => {
+      getElement(id).style.borderColor = wrongColor;
+    };
+    const handleNameRegex = (formData) => {
+      const nameRegex = new RegExp("^[a-zA-Z ]+$", "gi");
+      const ids = [
+        "fName",
+        "lName",
+        "faName",
+        "moName",
+        "city",
+        "state",
+        "country",
+      ];
+      for (let index = 0; index < ids.length; index++) {
+        nameRegex.test(formData.get(ids[index]))
+          ? rightBorderColor(ids[index])
+          : wrongBorderColor(ids[index]);
+        nameRegex.lastIndex = 0;
+      }
+    };
+    const handleEmptyElement = (id) => {
+      getElement(id).value.length == 0
+        ? wrongBorderColor(id)
+        : rightBorderColor(id);
+    };
+    const handleUniqueRegex = (id, regex, formData) => {
+      regex.lastIndex = 0;
+      regex.test(formData.get(id))
+        ? rightBorderColor(id)
+        : wrongBorderColor(id);
+    };
+
+    const validate = () => {
+      const formData = new FormData(document.querySelector("form"));
+      handleNameRegex(formData);
+      handleEmptyElement("hNumber");
+      handleEmptyElement("area");
+      const pincodeRegEx = /^[1-9]{1}\d{2}\s?\d{3}$/;
+      const mobileRegEx = /^0?(\+91\s?)?\d{10}$/;
+      const emailRegex = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
+      handleUniqueRegex("pincode", pincodeRegEx, formData);
+      handleUniqueRegex("mob", mobileRegEx, formData);
+      handleUniqueRegex("email", emailRegex, formData);
+    };
+  </script>
+</html>
