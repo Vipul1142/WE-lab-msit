@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WE LAB 10</title>
+    <style>
+      html {
+        width: 80vw;
+        margin: 20px auto;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        text-align: center;
+      }
+      #image {
+        margin: 10px auto;
+        width: 400px;
+        height: 500px;
+        border: 1px solid slateblue;
+        border-radius: 20px;
+        background-image: url(back-img2.jpg);
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 id="text">Hover your mouse pointer inside the box</h3>
+    <div id="image" onmouseover="showPlane()" onmouseout="showKong()"></div>
+  </body>
+  <script>
+    const text = document.getElementById("text");
+    const image = document.getElementById("image");
+    const showPlane = () => {
+      image.style.backgroundImage = "url(back-img1.jpg)";
+      text.innerText = "Move out your mouse pointer to get kong";
+    };
+    const showKong = () => {
+      image.style.backgroundImage = "url(back-img2.jpg)";
+      text.innerText = "Move in your mouse pointer to get plane";
+    };
+  </script>
+</html>
